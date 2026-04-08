@@ -1,10 +1,17 @@
+<label for="house-select">Filter by House:</label>
+<select id="house-select" [(ngModel)]="selectedHouse" (change)="filterByHouse()">
+  <option value="">All Houses</option>
+  <option *ngFor="let house of houses" [value]="house">{{ house }}</option>
+</select>
+
 <ul>
-	<li *ngFor="let character of characters">
+	<li *ngFor="let character of filteredCharacters">
 		<strong>{{ character.name }}</strong> - {{ character.house }}<br>
 		<span *ngIf="character.actor">Actor: {{ character.actor }}</span>
 		<span *ngIf="character.dateOfBirth"> | DOB: {{ character.dateOfBirth }}</span>
 		<span *ngIf="character.patronus"> | Patronus: {{ character.patronus }}</span>
 		<span *ngIf="character.wand?.core"> | Wand: {{ character.wand.core }}</span>
+        <span *ngIf="character.house"> | House: {{ character.house }}</span>
 		<span *ngIf="character.image">
 			<br><img [src]="character.image" alt="{{ character.name }}" width="100">
 		</span>
