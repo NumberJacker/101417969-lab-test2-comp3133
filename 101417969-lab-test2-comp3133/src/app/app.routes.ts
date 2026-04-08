@@ -4,6 +4,5 @@ import { CharacterDetails } from './character-details/character-details';
 
 export const routes: Routes = [
     { path: 'characters', component: CharacterList },
-    { path: 'characters/:id', component: CharacterDetails, renderMode: 'no-prerender' } as any
-    //{ path: 'characters/:id', component: CharacterDetails }
+    { path: 'characters/:id', component: CharacterDetails }
 ];

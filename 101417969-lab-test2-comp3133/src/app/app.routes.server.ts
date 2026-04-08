@@ -6,3 +6,9 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender
   }
 ];
+
+export async function getPrerenderParams() {
+  const res = await fetch('https://hp-api.onrender.com/api/characters');
+  const data = await res.json();
+  return data.map((character: any) => ({ id: character.id }));
+}
