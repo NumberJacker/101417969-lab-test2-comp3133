@@ -1,0 +1,25 @@
+<div *ngIf="character">
+	<h2>{{ character.name }}</h2>
+	<img *ngIf="character.image" [src]="character.image" [alt]="character.name" width="150">
+	<p *ngIf="character.actor"><strong>Actor:</strong> {{ character.actor }}</p>
+	<p *ngIf="character.house"><strong>House:</strong> {{ character.house }}</p>
+	<p *ngIf="character.dateOfBirth"><strong>Date of Birth:</strong> {{ character.dateOfBirth }}</p>
+	<p *ngIf="character.species"><strong>Species:</strong> {{ character.species }}</p>
+	<p *ngIf="character.gender"><strong>Gender:</strong> {{ character.gender }}</p>
+	<p *ngIf="character.ancestry"><strong>Ancestry:</strong> {{ character.ancestry }}</p>
+	<p *ngIf="character.patronus"><strong>Patronus:</strong> {{ character.patronus }}</p>
+	<p *ngIf="character.wand">
+		<strong>Wand:</strong>
+		<span *ngIf="character.wand.wood">{{ character.wand.wood }}</span>
+		<span *ngIf="character.wand.core"> - {{ character.wand.core }}</span>
+		<span *ngIf="character.wand.length"> - {{ character.wand.length }} inches</span>
+	</p>
+	<p *ngIf="character.hogwartsStudent"><strong>Hogwarts Student</strong></p>
+	<p *ngIf="character.hogwartsStaff"><strong>Hogwarts Staff</strong></p>
+	<p *ngIf="character.alive"><strong>Status:</strong> Alive</p>
+	<p *ngIf="character.alive === false"><strong>Status:</strong> Deceased</p>
+</div>
+<div *ngIf="!character">
+	<p>Character not found.</p>
+</div>
+
